@@ -19,9 +19,17 @@
     "edit_prediction_provider": "copilot"
   },
   "assistant": {
+    "profiles": {
+      "suggest": {
+        "name": "Suggest",
+        "tools": {},
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
+      "model": "claude-3-5-sonnet"
     },
     "version": "2",
     "dock": "right"
@@ -133,6 +141,9 @@
   "lsp": {
     "pyright": {
       "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        },
         "pyright": {
           "disableLanguageServices": false
         },
