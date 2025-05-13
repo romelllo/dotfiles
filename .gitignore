@@ -1,4 +1,4 @@
 zed/.config/zed/conversations/
 zed/.config/zed/embeddings/
-zed/.config/zed/prompts/prompts-library-db.0.mdb/lock.mdb
+zed/.config/zed/prompts/prompts-library-db.0.mdb/
 *.mdb
