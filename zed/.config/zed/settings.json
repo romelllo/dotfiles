@@ -83,7 +83,7 @@
   "relative_line_numbers": true,
   "theme": {
     "mode": "system",
-    "light": "Everforest Light Hard",
+    "light": "macOS Classic Light",
     "dark": "Everforest Dark Medium"
   },
   "terminal": {
