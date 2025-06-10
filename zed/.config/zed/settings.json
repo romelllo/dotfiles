@@ -13,12 +13,12 @@
       "proxy": null,
       "proxy_no_verify": null
     },
-    "enabled_in_assistant": true
+    "enabled_in_text_threads": true
   },
   "features": {
     "edit_prediction_provider": "copilot"
   },
-  "assistant": {
+  "agent": {
     "inline_assistant_model": {
       "provider": "copilot_chat",
       "model": "claude-3.5-sonnet"
@@ -32,11 +32,12 @@
       }
     },
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet"
     },
     "version": "2",
-    "dock": "right"
+    "dock": "right",
+    "default_view": "text_thread"
   },
   "restore_on_startup": "last_workspace",
   "project_panel": {
