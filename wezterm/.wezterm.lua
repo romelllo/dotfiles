@@ -1,74 +1,63 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require('wezterm')
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices
-
--- For example, changing the color scheme:
--- macOS color scheme for WezTerm
-local wezterm = require('wezterm')
-
--- Define the color scheme
-local macos_colors = {
+-- Define the monochrome color scheme
+local mono_colors = {
   -- Default colors
-  foreground = '#000000',
-  background = '#ffffff',
-  cursor_fg = '#ffffff',
-  cursor_bg = '#000000',
+  foreground = '#000000',  -- Pure black text
+  background = '#ffffff',  -- Pure white background
+  cursor_fg = '#ffffff',   -- White cursor text
+  cursor_bg = '#000000',   -- Black cursor background
   cursor_border = '#000000',
-  selection_fg = '#ffffff',
-  selection_bg = '#4d90fe',
+  selection_fg = '#ffffff', -- White text for selections
+  selection_bg = '#555555', -- Dark gray selection background
 
-  -- Terminal colors (Normal)
+  -- Terminal colors (Normal) - various shades of gray
   ansi = {
     '#000000', -- Black
-    '#c23621', -- Red
-    '#25bc24', -- Green
-    '#adad27', -- Yellow
-    '#492ee1', -- Blue
-    '#d338d3', -- Magenta
-    '#33bbc8', -- Cyan
-    '#cbcccd', -- White
+    '#555555', -- Dark Gray (instead of red)
+    '#777777', -- Medium Gray (instead of green)
+    '#999999', -- Gray (instead of yellow)
+    '#aaaaaa', -- Light Gray (instead of blue)
+    '#cccccc', -- Very Light Gray (instead of magenta)
+    '#dddddd', -- Almost White (instead of cyan)
+    '#ffffff', -- White
   },
 
-  -- Terminal colors (Bright)
+  -- Terminal colors (Bright) - more shades of gray
   brights = {
-    '#686a66', -- Bright Black
-    '#fc391f', -- Bright Red
-    '#31e722', -- Bright Green
-    '#eaec23', -- Bright Yellow
-    '#5833ff', -- Bright Blue
-    '#f935f8', -- Bright Magenta
-    '#14f0f0', -- Bright Cyan
-    '#e9ebeb', -- Bright White
+    '#333333', -- Dark Gray
+    '#666666', -- Medium Dark Gray
+    '#888888', -- Medium Gray
+    '#aaaaaa', -- Gray
+    '#bbbbbb', -- Medium Light Gray
+    '#dddddd', -- Light Gray
+    '#eeeeee', -- Very Light Gray
+    '#ffffff', -- White
   },
 }
 
 -- Add the scheme to WezTerm's color schemes
-config = {
-  color_schemes = {
-    ['macOS'] = macos_colors,
-  },
-  
-  -- Set it as the default color scheme
-  color_scheme = 'macOS',
-  
-  -- Additional settings to make it more macOS-like
-  window_decorations = 'TITLE | RESIZE',
-  window_padding = {
-    left = '1cell',
-    right = '1cell',
-    top = '0.5cell',
-    bottom = '0.5cell',
-  },
-  font = wezterm.font('Menlo', {weight = 'Regular', italic = false}),
-  font_size = 12.0,
+config.color_schemes = {
+  ['Monochrome'] = mono_colors,
 }
 
--- Font size 
+-- Set it as the default color scheme
+config.color_scheme = 'Monochrome'
+
+-- macOS-like settings
+config.window_decorations = 'TITLE | RESIZE'
+config.window_padding = {
+  left = '1cell',
+  right = '1cell',
+  top = '0.5cell',
+  bottom = '0.5cell',
+}
+config.font = wezterm.font('Menlo', {weight = 'Regular', italic = false})
 config.font_size = 13.5
 
--- and finally, return the configuration to wezterm
+-- Return the configuration to wezterm
 return config
