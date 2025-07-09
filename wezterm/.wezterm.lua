@@ -18,12 +18,12 @@ local mono_colors = {
   -- Terminal colors (Normal) - various shades of gray
   ansi = {
     '#000000', -- Black
-    '#555555', -- Dark Gray (instead of red)
-    '#777777', -- Medium Gray (instead of green)
-    '#999999', -- Gray (instead of yellow)
-    '#aaaaaa', -- Light Gray (instead of blue)
-    '#cccccc', -- Very Light Gray (instead of magenta)
-    '#dddddd', -- Almost White (instead of cyan)
+    '#555555', -- Dark Gray
+    '#777777', -- Medium Gray
+    '#999999', -- Gray
+    '#aaaaaa', -- Light Gray
+    '#cccccc', -- Very Light Gray
+    '#dddddd', -- Almost White
     '#ffffff', -- White
   },
 
