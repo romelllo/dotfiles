@@ -5,7 +5,7 @@ local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
 -- Theme
-config.color_scheme = 'Solarized Dark (Gogh)'
+config.color_scheme = 'Everforest Dark (Gogh)'
 
 -- Return the configuration to wezterm
 return config
