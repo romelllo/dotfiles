@@ -15,7 +15,7 @@ config.keys = {
 }
 
 -- Theme
-config.color_scheme = 'Mar (Gogh)'
+config.color_scheme = 'nord'
 
 -- Return the configuration to wezterm
 return config
