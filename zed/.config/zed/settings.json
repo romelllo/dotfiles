@@ -28,7 +28,7 @@
   "agent": {
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.5-sonnet"
+      "model": "claude-sonnet-4.5"
     },
     "profiles": {
       "suggest": {
@@ -90,7 +90,7 @@
   "relative_line_numbers": "enabled",
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "Nord Light",
     "dark": "Nord Dark"
   },
   "terminal": {
@@ -128,10 +128,7 @@
   "enable_language_server": true,
   "languages": {
     "Python": {
-      "language_servers": [
-        "pyright", // Pyright for type checking and language server (go-to definition, etc.)
-        "ruff" // Ruff for linting (soon the language server will be integrated into Ruff, so pyright will be removed)
-      ],
+      "language_servers": ["ty", "ruff", "!basedpyright"],
       "preferred_line_length": 120,
       "format_on_save": "on",
       "formatter": [
@@ -147,24 +144,10 @@
     }
   },
   "lsp": {
-    "pyright": {
+    "ty": {
       "settings": {
         "python": {
           "pythonPath": ".venv/bin/python"
-        },
-        "pyright": {
-          "disableLanguageServices": false
-        },
-        "python.analysis": {
-          "diagnosticMode": "openFilesOnly",
-          "typeCheckingMode": "off",
-          "diagnosticSeverityOverrides": {
-            "reportUnusedExpression": "none",
-            "reportCallIssue": "none",
-            "reportAttributeAccessIssue": "information",
-            "reportMissingImports": "warning",
-            "reportInvalidTypeForm": "none"
-          }
         }
       }
     }
