@@ -15,7 +15,7 @@ config.keys = {
 }
 
 -- Theme
-config.color_scheme = 'nord'
+config.color_scheme = 'Everforest Dark (Gogh)'
 
 -- Return the configuration to wezterm
 return config
