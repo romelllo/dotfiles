@@ -4,7 +4,10 @@
     "copilot": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "GitHub Copilot",
-      "options": {},
+      "options": {
+	"timeout": 300000,
+	"setCacheKey": true
+      },
       "models": {
         "claude-opus-4-5": {
           "name": "Claude Opus 4.5",
@@ -25,6 +28,24 @@
   },
   "model": "copilot/claude-opus-4-5",
   "small_model": "copilot/claude-haiku-4-5",
+  "permission": {
+	  "bash": "allow",
+	  "edit": "allow",
+	  "read": "allow",
+	  "grep": "allow",
+	  "glob": "allow",
+	  "list": "allow",
+	  "lsp": "allow",
+	  "skill": "allow",
+	  "todowrite": "allow",
+	  "todoread": "allow",
+	  "webfetch": "allow",
+	  "question": "allow"
+  },
+    "compaction": {
+    "auto": true,
+    "prune": true
+  },
   "theme": "everforest",
   "tui": {
     "scroll_speed": 3,
