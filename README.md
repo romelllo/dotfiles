@@ -2,6 +2,8 @@
 This repository contains dotfiles and configuration files for various applications and tools.
 
 ### Contents
-- `wezterm`: Configuration files for WezTerm terminal emulator.
-- `zed`: Configuration files for Zed text editor.
-- `zsh` : Configuration files for Zsh shell.
+- `wezterm`: WezTerm terminal emulator
+- `zed`: Zed text editor
+- `zsh` : Zsh shell
+- `opencode`: OpenCode AI coding agent
+- `nvim`: Neovim text editoe
