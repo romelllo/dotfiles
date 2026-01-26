@@ -46,3 +46,8 @@ eval "$(zoxide init zsh)"
 alias ls="eza"
 alias cd="z"
 alias cat="bat"
+
+### --------------------------------------------------
+### Default programs
+### --------------------------------------------------
+export EDITOR=nvim
