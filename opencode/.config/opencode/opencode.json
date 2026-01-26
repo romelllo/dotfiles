@@ -28,21 +28,8 @@
   },
   "model": "copilot/claude-opus-4-5",
   "small_model": "copilot/claude-haiku-4-5",
-  "permission": {
-	  "bash": "allow",
-	  "edit": "allow",
-	  "read": "allow",
-	  "grep": "allow",
-	  "glob": "allow",
-	  "list": "allow",
-	  "lsp": "allow",
-	  "skill": "allow",
-	  "todowrite": "allow",
-	  "todoread": "allow",
-	  "webfetch": "allow",
-	  "question": "allow"
-  },
-    "compaction": {
+  "default_agent": "plan",
+  "compaction": {
     "auto": true,
     "prune": true
   },
