@@ -890,22 +890,16 @@ require("lazy").setup({
 		},
 	},
 
-	{ -- Everforest colorscheme
-		"neanias/everforest-nvim",
-		version = false,
+	{ -- Nord colorscheme
+		"shaunsingh/nord.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local everforest = require("everforest")
+			vim.g.nord_disable_background = false
+			vim.g.nord_contrast = true
+			vim.g.nord_borders = false
 
-			everforest.setup({
-				background = "medium", -- "soft" | "medium" | "hard"
-				italics = false,
-				disable_italic_comments = true,
-			})
-
-			everforest.load()
-			-- vim.cmd.colorscheme("everforest")
+			vim.cmd.colorscheme("nord")
 		end,
 	},
 

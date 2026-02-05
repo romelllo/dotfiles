@@ -22,7 +22,7 @@ config.keys = {
 }
 
 -- Theme
-config.color_scheme = "Everforest Dark (Gogh)"
+config.color_scheme = "nord"
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 10
 

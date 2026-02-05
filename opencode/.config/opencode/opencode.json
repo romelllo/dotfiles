@@ -33,7 +33,7 @@
     "auto": true,
     "prune": true
   },
-  "theme": "everforest",
+  "theme": "nord",
   "tui": {
     "scroll_speed": 3,
     "scroll_acceleration": {
