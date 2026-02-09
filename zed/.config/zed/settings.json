@@ -15,15 +15,13 @@
     },
   },
   "edit_predictions": {
+    "provider": "copilot",
     "mode": "subtle",
     "copilot": {
       "proxy": null,
       "proxy_no_verify": null,
     },
     "enabled_in_text_threads": true,
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
   },
   "agent": {
     "inline_assistant_model": {
