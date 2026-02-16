@@ -9,8 +9,8 @@
 	"setCacheKey": true
       },
       "models": {
-        "claude-opus-4-5": {
-          "name": "Claude Opus 4.5",
+        "claude-opus-4-6": {
+          "name": "Claude Opus 4.6",
           "limit": {
             "context": 200000,
             "output": 8000
@@ -26,7 +26,7 @@
       }
     }
   },
-  "model": "github-copilot/claude-opus-4-5",
+  "model": "github-copilot/claude-opus-4-6",
   "small_model": "github-copilot/claude-haiku-4-5",
   "default_agent": "plan",
   "compaction": {
