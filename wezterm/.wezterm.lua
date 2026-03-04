@@ -22,7 +22,7 @@ config.keys = {
 }
 
 -- Theme
-config.color_scheme = "nord"
+config.color_scheme = wezterm.gui.get_appearance():find("Dark") and "nord" or "Builtin Solarized Light"
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 10
 
