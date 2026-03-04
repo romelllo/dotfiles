@@ -5,8 +5,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "GitHub Copilot",
       "options": {
-	"timeout": 300000,
-	"setCacheKey": true
+        "timeout": 300000,
+        "setCacheKey": true
       },
       "models": {
         "claude-opus-4-6": {
@@ -29,15 +29,9 @@
   "model": "github-copilot/claude-opus-4-6",
   "small_model": "github-copilot/claude-haiku-4-5",
   "default_agent": "plan",
+  "theme": "system",
   "compaction": {
     "auto": true,
     "prune": true
-  },
-  "theme": "nord",
-  "tui": {
-    "scroll_speed": 3,
-    "scroll_acceleration": {
-      "enabled": true
-    }
   }
 }
