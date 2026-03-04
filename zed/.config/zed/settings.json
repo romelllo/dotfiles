@@ -38,7 +38,7 @@
     },
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-haiku-4.5",
+      "model": "claude-opus-4.6",
     },
     "dock": "right",
     "default_view": "text_thread",
@@ -88,7 +88,7 @@
   "relative_line_numbers": "enabled",
   "theme": {
     "mode": "system",
-    "light": "Nord Light",
+    "light": "Solarized Light",
     "dark": "Nord Dark",
   },
   "terminal": {
