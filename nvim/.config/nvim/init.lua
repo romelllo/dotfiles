@@ -894,13 +894,12 @@ require("lazy").setup({
 		"shaunsingh/nord.nvim",
 		lazy = false,
 		priority = 1000,
-		config = function()
-			vim.g.nord_disable_background = false
-			vim.g.nord_contrast = true
-			vim.g.nord_borders = false
+	},
 
-			vim.cmd.colorscheme("nord")
-		end,
+	{ -- Solarized colorscheme
+		"shaunsingh/solarized.nvim",
+		lazy = false,
+		priority = 1000,
 	},
 
 	-- Highlight todo, notes, etc in comments
@@ -1039,3 +1038,49 @@ require("lazy").setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+--------------------------------------------------
+-- Theme switching (Nord <-> Solarized Light)
+--------------------------------------------------
+
+local function set_colorscheme()
+	local handle = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
+	local result = handle:read("*a") or ""
+	handle:close()
+
+	if result:match("Dark") then
+		vim.o.background = "dark"
+		vim.g.nord_disable_background = false
+		vim.g.nord_contrast = true
+		vim.g.nord_borders = false
+		vim.cmd.colorscheme("nord")
+	else
+		vim.o.background = "light"
+		vim.g.solarized_termtrans = 1
+		vim.g.solarized_contrast = "normal"
+		vim.g.solarized_visibility = "normal"
+		vim.cmd.colorscheme("solarized")
+	end
+end
+
+set_colorscheme()
+
+-- Auto refresh theme every 3s with proper cleanup
+local timer = vim.uv.new_timer()
+timer:start(
+	0,
+	3000,
+	vim.schedule_wrap(function()
+		set_colorscheme()
+	end)
+)
+
+-- Cleanup on exit
+vim.api.nvim_create_autocmd("VimLeavePre", {
+	callback = function()
+		if timer then
+			timer:stop()
+			timer:close()
+		end
+	end,
+})
