@@ -9,8 +9,8 @@
         "setCacheKey": true
       },
       "models": {
-        "claude-opus-4-6": {
-          "name": "Claude Opus 4.6",
+        "claude-sonnet-4-6": {
+          "name": "Claude Sonnet 4.6",
           "limit": {
             "context": 200000,
             "output": 8000
@@ -29,7 +29,6 @@
   "model": "github-copilot/claude-opus-4-6",
   "small_model": "github-copilot/claude-haiku-4-5",
   "default_agent": "plan",
-  "theme": "system",
   "compaction": {
     "auto": true,
     "prune": true
