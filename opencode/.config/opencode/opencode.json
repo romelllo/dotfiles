@@ -29,7 +29,7 @@
   "model": "github-copilot/claude-opus-4-6",
   "small_model": "github-copilot/claude-haiku-4-5",
   "default_agent": "plan",
-  "theme": "catppuccin-macchiato"
+  "theme": "catppuccin-macchiato",
   "compaction": {
     "auto": true,
     "prune": true
