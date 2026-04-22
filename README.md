@@ -7,5 +7,3 @@ This repository contains dotfiles and configuration files for various applicatio
 - `zsh` : Zsh shell
 - `opencode`: OpenCode AI coding agent
 - `nvim`: Neovim text editor
-- `raycast`: Raycast application launcher
-- `wallpapers`: wallpapers collection
