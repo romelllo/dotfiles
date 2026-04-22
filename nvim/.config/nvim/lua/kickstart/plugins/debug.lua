@@ -162,27 +162,61 @@ return {
           },
         }
       else
-        cb {
-          type = 'executable',
-          command = vim.fn.exepath 'python',
-          args = { '-m', 'debugpy.adapter' },
-          options = {
-            source_filetype = 'python',
-          },
-        }
+        -- Try to find debugpy-adapter or python with debugpy module
+        local cwd = vim.fn.getcwd()
+        local debugpy_adapter = cwd .. '/.venv/bin/debugpy-adapter'
+        
+        if vim.fn.executable(debugpy_adapter) == 1 then
+          cb {
+            type = 'executable',
+            command = debugpy_adapter,
+            options = {
+              source_filetype = 'python',
+            },
+          }
+        else
+          -- Fallback to python -m debugpy.adapter
+          local python_path = vim.fn.exepath 'python'
+          if python_path == '' then
+            python_path = cwd .. '/.venv/bin/python'
+            if vim.fn.executable(python_path) == 0 then
+              python_path = 'python3'
+            end
+          end
+          cb {
+            type = 'executable',
+            command = python_path,
+            args = { '-m', 'debugpy.adapter' },
+            options = {
+              source_filetype = 'python',
+            },
+          }
+        end
       end
     end
 
     -- Python DAP configurations
+    local function get_python_path()
+      local python_path = vim.fn.exepath 'python'
+      if python_path == '' then
+        local cwd = vim.fn.getcwd()
+        local venv_path = cwd .. '/.venv/bin/python'
+        if vim.fn.executable(venv_path) == 1 then
+          python_path = venv_path
+        else
+          python_path = 'python3'
+        end
+      end
+      return python_path
+    end
+    
     dap.configurations.python = {
       {
         type = 'python',
         request = 'launch',
         name = 'Launch file',
         program = '${file}',
-        pythonPath = function()
-          return vim.fn.exepath 'python'
-        end,
+        pythonPath = get_python_path(),
       },
       {
         type = 'python',
@@ -193,9 +227,30 @@ return {
           local args_string = vim.fn.input('Arguments: ')
           return vim.split(args_string, ' +')
         end,
-        pythonPath = function()
-          return vim.fn.exepath 'python'
+        pythonPath = get_python_path(),
+      },
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Pytest (current file)',
+        module = 'pytest',
+        args = function()
+          return { '${file}', '-v', '-s' }
         end,
+        pythonPath = get_python_path(),
+        justMyCode = false,
+      },
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Pytest (specific test)',
+        module = 'pytest',
+        args = function()
+          local test_name = vim.fn.input('Test name (e.g., tests/test_models.py::test_patient_normalise): ')
+          return { test_name, '-v', '-s' }
+        end,
+        pythonPath = get_python_path(),
+        justMyCode = false,
       },
     }
   end,
