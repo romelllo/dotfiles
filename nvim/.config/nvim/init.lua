@@ -890,9 +890,8 @@ require("lazy").setup({
 		},
 	},
 
-	{ -- Catppuccin colorscheme
-		"catppuccin/nvim",
-		name = "catppuccin",
+	{ -- Nord colorscheme
+		"shaunsingh/nord.nvim",
 		lazy = false,
 		priority = 1000,
 	},
@@ -1034,7 +1033,7 @@ require("lazy").setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
-vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("nord")
 
 -- Cleanup on exit
 vim.api.nvim_create_autocmd("VimLeavePre", {
