@@ -13,7 +13,7 @@ config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 12
 
 -- Window decorations
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
 
 config.treat_east_asian_ambiguous_width_as_wide = false
 config.keys = {
