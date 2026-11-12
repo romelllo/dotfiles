@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "cli_default_open_behavior": "existing_window",
   "outline_panel": {
     "dock": "left"
   },
@@ -14,7 +21,6 @@
     "dock": "left"
   },
   "agent_ui_font_size": 14.0,
-  "ui_font_family": "JetBrainsMono Nerd Font",
   "language_models": {
     "copilot_chat": {
       "api_url": "https://api.githubcopilot.com/chat/completions",
@@ -88,7 +94,6 @@
     "toggle_relative_line_numbers": true,
   },
   "cursor_blink": false,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 14,
   "buffer_font_size": 12.0,
   "buffer_line_height": "comfortable",
